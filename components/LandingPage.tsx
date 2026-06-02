@@ -47,7 +47,7 @@ function Hero({ config }: { config: SiteConfig }) {
           </div>
         </div>
         <div className="relative">
-          <Image src={config.hero.image} alt="Budowa domu z prefabrykowanych ścian z cegły WALL" width={1200} height={760} priority className="rounded-[32px] shadow-dark" />
+          <Image src={config.hero.image} alt="Budowa domu z prefabrykowanych ścian z cegły WALL" width={1200} height={760} priority className="aspect-[1.42] rounded-[32px] object-cover shadow-dark" />
           <div className="absolute bottom-5 left-5 rounded-[24px] border border-white/20 bg-wall-ink/82 p-5 text-white shadow-dark backdrop-blur-xl">
             <div className="text-4xl font-black text-wall-orange">{config.hero.stats[0]?.value}</div>
             <div className="text-sm font-bold text-white/75">{config.hero.stats[0]?.label}</div>
@@ -64,10 +64,13 @@ function Benefits({ config }: { config: SiteConfig }) {
       <div className="container-wall">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {config.benefits.map(benefit => (
-            <article key={benefit.title} className="group rounded-[28px] border border-zinc-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-premium">
-              <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-2xl font-black text-wall-orange">{benefit.icon}</div>
-              <h2 className="text-2xl font-black tracking-tight text-wall-ink">{benefit.title}</h2>
-              <p className="mt-4 leading-7 text-zinc-600">{benefit.description}</p>
+            <article key={benefit.title} className="group overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-premium">
+              {benefit.image && <Image src={benefit.image} alt={benefit.title} width={1200} height={760} className="aspect-[1.6] object-cover" />}
+              <div className="p-8">
+                <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-2xl font-black text-wall-orange">{benefit.icon}</div>
+                <h2 className="text-2xl font-black tracking-tight text-wall-ink">{benefit.title}</h2>
+                <p className="mt-4 leading-7 text-zinc-600">{benefit.description}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -114,7 +117,7 @@ function Systems({ config }: { config: SiteConfig }) {
           </ul>
           {config.systemsSection.cta && <div className="mt-8"><ButtonLink href={config.systemsSection.cta.href} variant="light">{config.systemsSection.cta.label}</ButtonLink></div>}
         </div>
-        <Image src={config.systemsSection.image} alt="Render prefabrykowanej ściany z cegły z oknem" width={1200} height={760} className="rounded-[32px] shadow-premium" />
+        <Image src={config.systemsSection.image} alt="Render prefabrykowanej ściany z cegły z oknem" width={1200} height={760} className="aspect-[1.42] rounded-[32px] object-cover shadow-premium" />
       </div>
     </section>
   )
@@ -131,7 +134,7 @@ function AiSection({ config }: { config: SiteConfig }) {
           {config.aiSection.cta && <div className="mt-8"><ButtonLink href={config.aiSection.cta.href} variant="secondary">{config.aiSection.cta.label}</ButtonLink></div>}
         </div>
         <div className="grid gap-5 md:grid-cols-[1fr_280px]">
-          <Image src={config.aiSection.image} alt="Blueprint i digital twin budynku" width={1200} height={760} className="rounded-[32px] shadow-dark" />
+          <Image src={config.aiSection.image} alt="Blueprint i digital twin budynku" width={1200} height={760} className="aspect-[1.42] rounded-[32px] object-cover shadow-dark" />
           <div className="grid gap-4">
             {config.aiSection.features.map(feature => <div key={feature} className="rounded-2xl border border-white/12 bg-white/[0.04] p-5 font-bold text-white/82">{feature}</div>)}
           </div>
@@ -172,7 +175,7 @@ function Interior({ config }: { config: SiteConfig }) {
   return (
     <section id="komfort" className="section-padding bg-wall-ink text-white">
       <div className="container-wall grid items-center gap-12 lg:grid-cols-[1.08fr_0.92fr]">
-        <Image src={config.interiorSection.image} alt="Komfortowe wnętrze domu po szybkiej konstrukcji" width={1200} height={760} className="rounded-[32px] shadow-dark" />
+        <Image src={config.interiorSection.image} alt="Komfortowe wnętrze domu po szybkiej konstrukcji" width={1200} height={760} className="aspect-[1.42] rounded-[32px] object-cover shadow-dark" />
         <div>
           <p className="text-sm font-black uppercase tracking-[0.22em] text-wall-orange">{config.interiorSection.eyebrow}</p>
           <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">{config.interiorSection.title}</h2>
