@@ -17,6 +17,7 @@ export type SiteCard = {
   title: string
   description: string
   icon: string
+  image?: string
 }
 
 export type ProcessStep = {
