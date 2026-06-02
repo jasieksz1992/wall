@@ -24,8 +24,7 @@ WALL to kompletny serwis webowy dla marki oferującej prefabrykowane ściany z p
 - `lib/auth.tsx` — `AuthProvider`, `useAuth` i `ProtectedRoute`
 - `lib/site-config.ts` — domyślna konfiguracja i obsługa `localStorage`
 - `types/site-config.ts` — typ `SiteConfig`
-- `public/site-config.json` — globalna konfiguracja strony do wdrożenia
-- `public/images/*` — statyczne grafiki SVG używane w sekcjach
+- `public/site-config.json` — globalna konfiguracja strony z osadzonymi zdjęciami PNG jako base64 data URI
 
 ## 1. Instalacja zależności
 
