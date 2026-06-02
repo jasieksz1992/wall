@@ -18,10 +18,10 @@ WALL to kompletny serwis webowy dla marki oferującej prefabrykowane ściany z p
 - `app/page.tsx` — statyczna strona główna
 - `app/login/page.tsx` — logowanie Email/Password przez Firebase Authentication
 - `app/admin/page.tsx` — chroniony dashboard
-- `app/admin/config/page.tsx` — lokalny edytor konfiguracji strony
+- `app/admin/config/page.tsx` — lokalny edyt[package.json](package.json)or konfiguracji strony
 - `components/*` — komponenty UI, landing page, formularz i panel
 - `lib/firebase.ts` — inicjalizacja Firebase Web SDK
-- `lib/auth.tsx` — `AuthProvider`, `useAuth` i `ProtectedRoute`
+- `lib/auth.tsx` — `AuthPro[.firebaserc](.firebaserc)vider`, `useAuth` i `ProtectedRoute`
 - `lib/site-config.ts` — domyślna konfiguracja i obsługa `localStorage`
 - `types/site-config.ts` — typ `SiteConfig`
 - `public/site-config.json` — globalna konfiguracja strony do wdrożenia
